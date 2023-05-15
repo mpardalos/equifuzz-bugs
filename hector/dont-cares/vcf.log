@@ -1,0 +1,267 @@
+total 12
+-rw-r--r--. 1 mp5617 eemsc00 448 May 12 16:33 compare.tcl
+-rw-r--r--. 1 mp5617 eemsc00 535 May 12 16:33 impl.cpp
+-rw-r--r--. 1 mp5617 eemsc00 125 May 12 16:33 spec.v
+dbda8153e2ea073e89c02599b4235e81  spec.v
+[01m[31mNote:[0m DISPLAY is not set, GUI view commands are disabled.
+
+                                   VC Static 
+
+                Version T-2022.06-SP2 for linux64 - Nov 29, 2022
+
+                    Copyright (c) 2010 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;34mvcf> [0m[J[0mLicense feature checked out: VC-FORMAL-DPV-BASE-SH
+License feature checked out: Hector
+INFO: Storing temporary files in directory '/home/mp5617/equifuzz_vcf_experiment/194fe0ac-73c4-4d5b-95b3-99357335e783/vcst_rtdb/.internal/hector'.
+[1;34mvcf> [0m[J[0mset_custom_solve_script "orch_multipliers"
+orch_multipliers
+set_user_assumes_lemmas_procedure "miter"
+miter
+create_design -name spec -top spec
+1
+vcs -sverilog spec.v
+1
+compile_design spec
+INFO: Starting  compile_design spec
+The language for design 'spec' given or determined to be 'sverilog' language.
+Parsing design file 'spec.v'
+CPU time: .204 seconds to compile
+Doing common elaboration 
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+=======================================================
+VCS CPU Time(s)     :0.26
+SIMON CPU Time(s)   :0.01
+SIMON Total Time(s) :0.01
+Peak Memory(MB)     :400
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated
+INFO: RTL successfully read.
+Info SVA-003: Information for SVA successfully attached.
+Info SEQ-014: Starting reset simulation.
+Info SEQ-601: 0 registers reset out of 0 registers
+INFO: Writing DFG to file "spec.dfg".
+INFO: Finished  compile_design spec    (2  sec)
+INFO: Number of DFG nodes : 6
+1
+create_design -name impl -top impl
+1
+cppan impl.cpp
+1
+compile_design impl
+INFO: Starting  compile_design impl
+The language for design 'impl' given or determined to be 'c++' language.
+hcc -e 5 --namespaces -tused --preinclude scvdef.h --template_info_file /home/mp5617/equifuzz_vcf_experiment/194fe0ac-73c4-4d5b-95b3-99357335e783/vcst_rtdb/.internal/hector/templateInfo.ti --diag_suppress 1097 -DHECTOR -I. -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/systemc_2_1.oct_12_2004.beta_hector/include -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2 -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2/x86_64-redhat-linux -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2/backward -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/gccinclude/gcc-4.2.2/lib/gcc/x86_64-redhat-linux/4.2.2/include -I/usr/include -I/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/softfloat/softfloat-original -D_HECTOR_SOFTFLOAT_VERSION=0 impl.cpp /eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/Hector_builtin.cc /eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/Hector_lib.cc 
+Compiling impl.cpp ...
+"/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2/limits", line 375: warning: 
+          integer conversion resulted in a change of sign
+        { return __glibcxx_min(char); }
+                 ^
+"/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2/limits", line 530: warning: 
+          integer operation result is out of range
+        { return __glibcxx_max (wchar_t); }
+                 ^
+"/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/systemc/communication/sc_signal.h", line 322: warning: 
+          missing return statement at end of non-void function
+          "sc_signal<bool>::event"
+      virtual bool event() const {}
+                                  ^
+"/eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/systemc/communication/sc_signal.h", line 129: warning: 
+          missing return statement at end of non-void function
+          "sc_signal<T>::event [with T=sc_dt::sc_logic]"
+      virtual bool event() const {}
+                                  ^
+          detected during instantiation of
+                    "bool sc_signal<T>::event() const [with T=sc_dt::sc_logic]"
+                    
+4 warnings
+Compiling /eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/Hector_builtin.cc ...
+Compiling /eda/synopsys/2022-23/RHELx86/VC-STATIC_2022.06-SP2/hector/local/Hector_lib.cc ...
+Warning: The following functions still contain references to external global variables: 
+           __init_0 (__init_0)
+               _ZN12sc_interface16m_never_notifiedE
+               _ZNSt17__timepunct_cacheIcE12_S_timezonesE
+               _ZNSt17__timepunct_cacheIwE12_S_timezonesE
+Constructing DFG for impl()
+Simulating global initialization __init_0... ok
+Simulating global initialization __init_1... ok
+Simulating global initialization __init_2... ok
+Registering output 'out' with bitwidth 43.
+Elapsed time: 0.03s user, 0s system, 0.03s real.
+Simulated 714 statements in 0.03s.
+Final number of DFG nodes: 138
+INFO: Writing DFG to file "impl.dfg".
+INFO: Finished  compile_design impl    (1  sec)
+INFO: Number of DFG nodes : 138
+1
+proc miter {} {
+        map_by_name -inputs -implphase 1 -specphase 1
+        lemma out_equiv = spec.out(1) == impl.out(1)
+}
+compose
+INFO: Starting  compose 
+INFO: No mapping is assumed between inputs of the two designs. 
+INFO: Reading DFG from file "spec.dfg".
+INFO: Marking DFG as specification.
+INFO: Reading DFG from file "impl.dfg".
+INFO: Marking DFG as implementation.
+Reading testbench '/home/mp5617/equifuzz_vcf_experiment/194fe0ac-73c4-4d5b-95b3-99357335e783/vcst_rtdb/.internal/hector/mytb.v'.
+Parsing design file '/home/mp5617/equifuzz_vcf_experiment/194fe0ac-73c4-4d5b-95b3-99357335e783/vcst_rtdb/.internal/hector/mytb.v'
+Parsing design file '/home/mp5617/equifuzz_vcf_experiment/194fe0ac-73c4-4d5b-95b3-99357335e783/vcst_rtdb/.internal/hector/mytb.dummy.v'
+CPU time: .194 seconds to compile
+Doing common elaboration 
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+=======================================================
+VCS CPU Time(s)     :0.18
+SIMON CPU Time(s)   :0.01
+SIMON Total Time(s) :0.01
+Peak Memory(MB)     :397
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated
+Info DFR-003: Format version (17) doesn't match default version (18).
+Info SVA-003: Information for SVA successfully attached.
+INFO: RTL successfully read.
+Parsing design file './vcst_rtdb/.internal/hector/verdi/impl_dummy.v'
+CPU time: .200 seconds to compile
+Doing common elaboration 
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+=======================================================
+VCS CPU Time(s)     :0.17
+SIMON CPU Time(s)   :0.01
+SIMON Total Time(s) :0.01
+Peak Memory(MB)     :381
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+INFO: RTL successfully read.
+Parsing design file './vcst_rtdb/.internal/hector/verdi/mytb.v'
+CPU time: .189 seconds to compile
+Doing common elaboration 
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+Warning-[SM_BB_LIST] Blackbox module list
+  List of modules in design which are blackboxed by tool/user (1): 
+  \IMPL.implmodule 
+=======================================================
+VCS CPU Time(s)     :0.26
+SIMON CPU Time(s)   :0.03
+SIMON Total Time(s) :0.01
+Peak Memory(MB)     :400
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated
+INFO: RTL successfully read.
+INFO: Composition successful.
+INFO: Writing DFG to file "all.dfg".
+INFO: Finished  compose   (6 sec) 
+INFO: Number of DFG nodes : 159
+1
+solveNB proof
+INFO: Using solve script "".
+INFO: Reading DFG from file "all.dfg".
+----------------------------------------------------
+-       Proving output equivalence                 -
+----------------------------------------------------
+INFO: Obtaining assumptions, lemmas and covers from procedure 'miter'
+Warning MBN-017: Some of the spec or impl design signals are not mapped by 'map_by_name' command, you can get the details from file '/home/mp5617/equifuzz_vcf_experiment/194fe0ac-73c4-4d5b-95b3-99357335e783/vcst_rtdb/.internal/hector/unmapped_signal_list.txt'.
+INFO: Proof proof using solve script(s) orch_multipliers
+master_unroll_in_workers: function name: testbench_flat_0
+1
+proofwait
+[Info]: No running tasks. Returning from proofwait.
+1
+listproof
+================================================================================
+Proof proof
+  Assumptions                 0
+  User Defined Lemmas         1
+  Hector Generated AEP Lemmas 0
+  Cutpoints                   0
+  Proof Strategy              default
+  Parent Proof                none
+--------------------------------------------------------------------------------
+                                  Assumptions                                   
+ Use Name            Expression     
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                                     Lemmas                                     
+ Use Status       Name            Expression                
+--------------------------------------------------------------------------------
+  *  success      out_equiv       spec.out(1) == impl.out(1)
+--------------------------------------------------------------------------------
+Tasks: Out of 1 tasks created
+             1 have finished
+Results: Out of 1 enabled lemmas
+             1 were successful
+             0 were conditionally successful
+             0 failed
+             0 were conditionally failed
+             0 were inconclusive (timeout)
+             0 were not tried
+Status for proof "proof": SUCCESSFUL
+================================================================================
+1
+simcex -txt counter_example.txt out_equiv
+[0;3[1m*** Error INDCEX-010: Lemma didn't fail or does not have a counter-example.[[0m
+0
+quitInfo: Encountered quit in the script.
+=======================================================
+Total Time(S)  :21.28
+CPU Time(S)    :8.17
+Peak Memory(MB):1159
+=======================================================
