@@ -1,0 +1,20 @@
+#+begin_src cpp
+sc_dt::sc_uint<8> dut() {
+      sc_dt::sc_fixed<10,8> x0 = sc_dt::sc_fixed<10,8>(-1);
+      sc_dt::sc_uint<8> x1 = sc_dt::sc_uint<8>(x0);
+      return x1;
+}
+#+end_src
+[[file:dut.cpp]]
+
+|                     | Hex |   Binary |
+| Reference result    | ff  | 11111111 |
+| VCF-expected result | fc  | 11111100 |
+
+The SystemC specification confirms that the first interpretation is correct:
+
+#+begin_quote
+Assignment of a fixed-point type to an integer type shall use the integer component only; any fractional component is discarded.
+#+end_quote
+
+VCF, instead, seems to take ~x0~ as a bitvector and directly interpret it as a ~uint~.
