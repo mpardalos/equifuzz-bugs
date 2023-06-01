@@ -2,11 +2,11 @@ set_custom_solve_script "orch_multipliers"
 set_user_assumes_lemmas_procedure "miter"
 
 create_design -name spec -top impl
-cppan impl.cpp
+scdtan impl.cpp -DSC_INCLUDE_FX -DSYSTEMC_DTONLY
 compile_design spec
 
 create_design -name impl -top impl
-cppan impl.cpp
+scdtan impl.cpp -DSC_INCLUDE_FX -DSYSTEMC_DTONLY
 compile_design impl
 
 proc miter {} {
