@@ -1,0 +1,11 @@
+Inputs in phase 0
+  _clk 1'h1 0 1
+Inputs in phase 1
+  _clk 1'h0 0 1
+Simulating phase 0
+  testbench.out 29'h1ff00000 OUTPUT
+  testbench._clk 1'h1 INPUT
+  testbench.info.phase 32'h00000000 NONE
+Simulating phase 1
+  testbench._clk 1'h0 INPUT
+  testbench.info.phase 32'h00000001 NONE
