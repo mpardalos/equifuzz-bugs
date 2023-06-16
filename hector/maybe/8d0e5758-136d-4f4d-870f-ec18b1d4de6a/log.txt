@@ -1,0 +1,172 @@
+total 8
+-rw-r--r--. 1 mp5617 eemsc00  354 Jun 16 01:26 compare.tcl
+-rw-r--r--. 1 mp5617 eemsc00 1017 Jun 16 01:26 impl.cpp
+54a1f51286b690ee32efda78ddf24171  compare.tcl
+7bf6963e6efbe6dec3e7d3044195239a  impl.cpp
+[01m[31mNote:[0m DISPLAY is not set, GUI view commands are disabled.
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+
+                                   VC Static
+
+                 Version U-2023.03-1 for linux64 - Apr 17, 2023
+
+                    Copyright (c) 2010 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;34mvcf> [0m[J[0mLicense feature checked out: VC-FORMAL-DPV-BASE-SH
+License feature checked out: Hector
+INFO: Storing temporary files in directory '/home/mp5617/equifuzz_vcf_experiment/fc5aa23e-ff54-49cf-8716-b485f89158f1/vcst_rtdb/.internal/hector'.
+
+[1;34mvcf> [0m[J[0mset_custom_solve_script "orch_multipliers"
+orch_multipliers
+set_user_assumes_lemmas_procedure "miter"
+miter
+create_design -name impl -top impl
+1
+scdtan -DSC_INCLUDE_FX impl.cpp
+1
+compile_design impl
+INFO: Starting  compile_design impl
+The language for design 'impl' given or determined to be 'scdt' language.
+hcc -e 5 --namespaces -tused --preinclude scvdef.h --template_info_file /home/mp5617/equifuzz_vcf_experiment/fc5aa23e-ff54-49cf-8716-b485f89158f1/vcst_rtdb/.internal/hector/templateInfo.ti --diag_suppress 1097 -DHECTOR -DUSE_SYSTEMC -DSYSTEMC_DTONLY -w -I. -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/systemc_2_1.oct_12_2004.beta_hector/include -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2 -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2/x86_64-redhat-linux -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/gccinclude/gcc-4.2.2/include/c++/4.2.2/backward -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/gccinclude/gcc-4.2.2/lib/gcc/x86_64-redhat-linux/4.2.2/include -I/usr/include -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/softfloat/softfloat-3e/source -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/softfloat/softfloat-3e/source/include -I/scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/softfloat/softfloat-3e/source/8086 -D_HECTOR_SOFTFLOAT_VERSION=1 -DSC_INCLUDE_FX impl.cpp /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/Hector_builtin.cc /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/Hector_lib.cc /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/systemc/hector_sc_utils.cpp /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/systemc/datatypes/int/sc_nbdefs.cpp
+Compiling impl.cpp ...
+Compiling /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/Hector_builtin.cc ...
+Compiling /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/Hector_lib.cc ...
+Compiling /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/systemc/hector_sc_utils.cpp ...
+Compiling /scratch/mp5617/synopsys/vc_static/U-2023.03-1/hector/local/systemc/datatypes/int/sc_nbdefs.cpp ...
+Warning: The following functions still contain references to external global variables:
+           __init_0 (__init_0)
+               _ZNSt17__timepunct_cacheIcE12_S_timezonesE
+               _ZNSt17__timepunct_cacheIwE12_S_timezonesE
+           __init_4 (__init_4)
+               _ZNSt17__timepunct_cacheIcE12_S_timezonesE
+               _ZNSt17__timepunct_cacheIwE12_S_timezonesE
+Constructing DFG for impl()
+Simulating global initialization __init_4... ok
+Simulating global initialization __init_0... ok
+Simulating global initialization __init_1... ok
+Simulating global initialization __init_2... ok
+Registering output 'out' with bitwidth 23.
+Elapsed time: 0.1s user, 0s system, 0.1s real.
+Simulated 2754 statements in 0.1s.
+Final number of DFG nodes: 223
+INFO: Writing DFG to file "impl.dfg".
+INFO: Finished  compile_design impl    (2  sec)
+INFO: Number of DFG nodes : 223
+1
+proc miter {} {
+        lemma out_equiv = out(1) == 23'b001000000000000000000000
+}
+compose -nospec
+INFO: Starting  compose -nospec
+INFO: Reading DFG from file "impl.dfg".
+Parsing design file './vcst_rtdb/.internal/hector/verdi/impl_dummy.v'
+CPU time: .148 seconds to compile
+Doing common elaboration
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+=======================================================
+VCS CPU Time(s)     :0.17
+SIMON CPU Time(s)   :0.01
+SIMON Total Time(s) :0.27
+Peak Memory(MB)     :408
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete
+Info: Exiting after Simon Analysis
+Verdi KDB elaboration done and the database successfully generated
+INFO: RTL successfully read.
+Info IFC-676: Current design is 'impl'.
+INFO: Writing DFG to file "all.dfg".
+INFO: Finished  compose -nospec  (5 sec)
+INFO: Number of DFG nodes : 223
+1
+solveNB proof
+INFO: Using solve script "".
+INFO: Reading DFG from file "all.dfg".
+----------------------------------------------------
+-       Proving output equivalence                 -
+----------------------------------------------------
+INFO: Obtaining assumptions, lemmas and covers from procedure 'miter'
+INFO: Proof proof using solve script(s) orch_multipliers
+master_unroll_in_workers: function name: _Z4implv_flat_0
+1
+proofwait
+[Info]: No running tasks. Returning from proofwait.
+1
+listproof
+================================================================================
+Proof proof
+  Assumptions                 0
+  User Defined Lemmas         1
+  Hector Generated AEP Lemmas 0
+  Cutpoints                   0
+  Proof Strategy              default
+  Parent Proof                none
+--------------------------------------------------------------------------------
+                                  Assumptions
+  Use   Name    Expression
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                                     Lemmas
+  Use   Status     Name         Expression
+--------------------------------------------------------------------------------
+   *    failed     out_equiv    out(1) == 23'b001000000000000000000000
+--------------------------------------------------------------------------------
+Tasks: Out of 1 tasks created
+             1 have finished
+Results: Out of 1 enabled lemmas
+             0 were successful
+             0 were conditionally successful
+             1 failed
+             0 were conditionally failed
+             0 were inconclusive (timeout)
+             0 were not tried
+Status for proof "proof": FAILED
+================================================================================
+1
+simcex -txt counter_example.txt out_equiv
+_clk (0)  (0, 1) 1'h1
+_clk (1)  (0, 1) 1'h0
+1
+quit
+=======================================================
+Total Time(S)  :30.79
+CPU Time(S)    :5.33
+Peak Memory(MB):1202
+=======================================================
